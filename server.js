@@ -56,7 +56,7 @@ app.get('/',function(req,res)
           podstate: 'Step-by-step%20solution',
           assumption: '*C.is+divisible+by-_*InfixFunctionOperator-', 
           //appid: waApi,
-          format: 'img',  // change back to image
+          format: 'plaintext',  // change back to image
           output: 'xml',
           scanner: 'solve',
           primary: 'true',
