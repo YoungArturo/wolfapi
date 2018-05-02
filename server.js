@@ -54,7 +54,7 @@ app.get('/',function(req,res)
           //podtitle 'Results',
           includepodid: 'Result',
           podstate: 'Step-by-step%20solution',
-          //assumption: 'MutliClash', 
+          assumption: '*C.is+divisible+by-_*InfixFunctionOperator-, 
           //appid: waApi,
           format: 'plaintext',  // change back to image
           output: 'xml',
@@ -62,6 +62,7 @@ app.get('/',function(req,res)
           primary: 'true',
           position: '200',
           error: 'false',
+          
         }).then((queryresult) => {
            res.send(queryresult) //console.log(queryresult.pods[0].subpods[0].plaintext), 
         }).catch(console.error)
