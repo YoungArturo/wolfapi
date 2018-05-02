@@ -52,8 +52,8 @@ function API(){
         }).then((queryresult) => {
            console.log(queryresult.pods[0].subpods[0].plaintext)
         }).catch(console.error)
-    }
-    res.write(queryresult);
+          res.write(queryresult);
+      }
   }
   res.end();
 }).listen(process.env.PORT || 5000);
