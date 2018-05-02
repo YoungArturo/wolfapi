@@ -57,7 +57,7 @@ app.get('/',function(req,res)
           format: 'plaintext',  // change back to image
           output: 'xml',
         }).then((queryresult) => {
-           console.log(queryresult.pods[0].subpods[0].plaintext), res.send(queryresult)
+           res.send(queryresult) //console.log(queryresult.pods[0].subpods[0].plaintext), 
         }).catch(console.error)
          
       }
