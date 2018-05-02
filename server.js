@@ -53,6 +53,7 @@ app.get('/',function(req,res)
           input: userInput,
          // includepodid: 'Result',
           podstate: 'Step-by-step%20solution',
+          assumption: 'FormulaSelect',
           //appid: waApi,
           format: 'plaintext',  // change back to image
           output: 'xml',
