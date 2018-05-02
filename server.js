@@ -50,7 +50,7 @@ function API(){
           format: 'image',  // change back to image
           output: 'json',
         }).then((queryresult) => {
-           res.end(queryresult)
+           res.end(JSON.stringify(queryresult))
         }).catch(console.error)
     }
   }
