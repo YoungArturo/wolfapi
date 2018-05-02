@@ -31,7 +31,7 @@ mjAPI.config({
     var server = http.createServer(function (req, res) {
     const { headers, method, url } = req;
     res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write('<script type="text/javascript" src="ASCIIMathML.js"></script>'); //include mathml
+    //res.write('<script type="text/javascript" src="ASCIIMathML.js"></script>'); //include mathml
     console.log(url);
     //var call = url.substr(1);
 
@@ -50,10 +50,11 @@ function API(){
           format: 'plaintext',  // change back to image
           output: 'json',
         }).then((queryresult) => {
-          res.send(queryresult)
+          res.write((queryresult)
         }).catch(console.error)
     }
   }
+  res.end();
 }).listen(process.env.PORT || 5000);
 
 
