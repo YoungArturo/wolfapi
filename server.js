@@ -49,8 +49,8 @@ function API(){
           //appid: waApi,
           format: 'plaintext',  // change back to image
           output: 'json',
-        }).then((queryresult) => {
-           res.write(queryresult);
+        }).then(res.write(queryresult) => {
+           console.log(queryresult.pods[0].subpods[0].plaintext)
         }).catch(console.error)
       }
   }
