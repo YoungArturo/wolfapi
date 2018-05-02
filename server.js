@@ -51,10 +51,10 @@ app.get('/',function(req,res)
       else{
         waApi.getFull({
           input: userInput,
-          //podtitle 'Results',
+          podtitle 'Results',
           includepodid: 'Result',
           podstate: 'Step-by-step%20solution',
-          assumption: '*C.is+divisible+by-_*InfixFunctionOperator-, 
+          assumption: '*C.is+divisible+by-_*InfixFunctionOperator-', 
           //appid: waApi,
           format: 'plaintext',  // change back to image
           output: 'xml',
