@@ -3,7 +3,7 @@ const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 const CONCURRENCY = process.env.WEB_CONCURRENCY || 1;
 
-var urlencode = require('urlencode');
+//var urlencode = require('urlencode');
 //http server 
 //var http = require('http'); 
 //var url = require('url');
@@ -23,7 +23,7 @@ const waApi = WolframAlphaAPI('U72E65-ARQERXR86Y');
 //Sample problem
 //Possibly remove whitespaces
 var userInput = "prove by induction sum of j from 1 to n = n(n+1)/2 for n>0";
-var query = urlencode(userInput);  
+//var query = urlencode(userInput);  
     
 //mathjax-node library
 /*var mjAPI = require("mathjax-node");
