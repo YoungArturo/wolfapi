@@ -3,7 +3,7 @@ const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 const CONCURRENCY = process.env.WEB_CONCURRENCY || 1;
 
-//var urlencode = require('urlencode');
+var urlencode = require('urlencode');
 //http server 
 //var http = require('http'); 
 //var url = require('url');
@@ -18,6 +18,8 @@ var server=app.listen(3000,function() {});
 const WolframAlphaAPI = require('wolfram-alpha-api');
 const waApi = WolframAlphaAPI('U72E65-ARQERXR86Y');
     
+    
+    //encode then decode
 //Sample problem
 var userInput = "prove+by+induction+1+3+5+...+(2n-1)=n*n";
   
@@ -50,7 +52,7 @@ app.get('/',function(req,res)
       }
       else{
         waApi.getFull({
-          input: userInput,
+          input: urlencode(userInput),
           //numpods: '2',
           //includepodid: 'Input',
           podstate: 'Step-by-step',
