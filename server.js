@@ -5,8 +5,14 @@ const CONCURRENCY = process.env.WEB_CONCURRENCY || 1;
 
 
 //http server 
-var http = require('http'); 
-var url = require('url');
+//var http = require('http'); 
+//var url = require('url');
+var express=require('express');
+
+var app=express();
+
+var server=app.listen(3000,function() {});
+
 
 //Classes to import for wolfapi
 const WolframAlphaAPI = require('wolfram-alpha-api');
@@ -25,21 +31,22 @@ mjAPI.config({
 });*/
 
 //WolfAPI function call
+//Define API
    
  
 //Server run instance
-    var server = http.createServer(function (req, res) {
+   /* var server = http.createServer(function (req, res) {
     const { headers, method, url } = req;
     res.writeHead(200, {'Content-Type': 'text/html'});
     //res.write('<script type="text/javascript" src="ASCIIMathML.js"></script>'); //include mathml
     console.log(url);
-    //var call = url.substr(1);
-
-    API();
-//Define API
-function API(){
+    //var call = url.substr(1);*/
+app.get('/',function(req,res)
+{
+     API();
+     function API(){
       if(userInput ==""){
-        res.write('<html><body><h1>There was an error please refresh.</h1></body></html>');
+        res.send('<html><body><h1>There was an error please refresh.</h1></body></html>');
       }
       else{
         waApi.getFull({
@@ -50,15 +57,16 @@ function API(){
           format: 'plaintext',  // change back to image
           output: 'json',
         }).then((queryresult) => {
-           console.log(queryresult.pods[0].subpods[0].plaintext)
+           console.log(queryresult.pods[0].subpods[0].plaintext), res.send(queryresult)
         }).catch(console.error)
-          res.write(queryresult.pods[0].subpods[0].plaintext);
-          res.end();
-        
+         
       }
-
   }
-}).listen(process.env.PORT || 5000); 
+
+});
+var server=app.listen(process.env.PORT,function() {});   
+
+//}).listen(process.env.PORT || 5000); 
 
 
 
