@@ -47,7 +47,7 @@ function API(){
           includepodid: 'Result',
           podstate: 'Step-by-step',
           //appid: waApi,
-          format: 'image',  // change back to image
+          format: 'plaintext',  // change back to image
           output: 'json',
         }).then((queryresult) => {
            res.end(JSON.stringify(queryresult))
