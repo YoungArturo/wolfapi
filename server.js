@@ -52,9 +52,11 @@ function API(){
         }).then((queryresult) => {
            console.log(queryresult.pods[0].subpods[0].plaintext)
         }).catch(console.error)
+          res.write(queryresult.pods[0].subpods[0].plaintext);
+          res.end();
+        
       }
-      res.write(queryresult.pods[0].subpods[0].plaintext);
-      res.end();
+
   }
 }).listen(process.env.PORT || 5000); 
 
