@@ -53,7 +53,7 @@ app.get('/',function(req,res)
       }
       else{
         waApi.getFull({
-          input: query,
+          input: userInput,
           //numpods: '2',
           //includepodid: 'Input',
           podstate: 'Step-by-step',
