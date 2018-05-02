@@ -12,7 +12,7 @@ var express=require('express');
 var app=express();
 
 var server=app.listen(3000,function() {});
-//var query = urlencode(userInput);
+
 
 //Classes to import for wolfapi
 const WolframAlphaAPI = require('wolfram-alpha-api');
@@ -21,8 +21,9 @@ const waApi = WolframAlphaAPI('U72E65-ARQERXR86Y');
     
     //encode then decode
 //Sample problem
+//Possibly remove whitespaces
 var userInput = "prove+by+induction+1+3+5+...+(2n-1)=n*n";
-  
+var query = urlencode(userInput);  
     
 //mathjax-node library
 /*var mjAPI = require("mathjax-node");
@@ -52,7 +53,7 @@ app.get('/',function(req,res)
       }
       else{
         waApi.getFull({
-          input: urlencode(userInput),
+          input: query,
           //numpods: '2',
           //includepodid: 'Input',
           podstate: 'Step-by-step',
