@@ -51,7 +51,7 @@ app.get('/',function(req,res)
       else{
         waApi.getFull({
           input: userInput,
-          podtitle 'Result',
+          podtitle 'Result*',
           includepodid: 'Result',
           podstate: 'Step-by-step%20solution',
           assumption: '*C.is+divisible+by-_*InfixFunctionOperator-', 
