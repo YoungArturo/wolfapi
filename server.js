@@ -51,7 +51,7 @@ function API(){
           output: 'json',
         }).then((queryresult) => {
            res.write(queryresult);
-        }).catch(console.error);
+        }).catch(console.error)
       }
   }
   res.end();
