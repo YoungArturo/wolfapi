@@ -51,17 +51,15 @@ app.get('/',function(req,res)
       else{
         waApi.getFull({
           input: userInput,
-          podindex: '2',
-          includepodid: 'Result',
+          //numpods: '2',
+          //includepodid: 'Input',
           podstate: 'Step-by-step%20solution',
           assumption: '*C.is+divisible+by-_*InfixFunctionOperator-', 
           //appid: waApi,
           format: 'plaintext',  // change back to image
           output: 'xml',
-          scanner: 'solve',
+          scanner: 'Simplification',
           primary: 'true',
-          position: '200',
-          error: 'false',
           
         }).then((queryresult) => {
            res.send(queryresult) //console.log(queryresult.pods[0].subpods[0].plaintext), 
