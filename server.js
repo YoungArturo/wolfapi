@@ -54,7 +54,7 @@ app.get('/',function(req,res)
           //numpods: '2',
           //includepodid: 'Input',
           podstate: 'Step-by-step%20solution',
-          assumption: '*C.is+divisible+by-_*InfixFunctionOperator-', 
+          assumption: '*C.is+divisible+by-_*ProveWord-', 
           //appid: waApi,
           format: 'plaintext',  // change back to image
           output: 'xml',
