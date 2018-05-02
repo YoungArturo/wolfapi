@@ -51,8 +51,8 @@ app.get('/',function(req,res)
       else{
         waApi.getFull({
           input: userInput,
-          podtitle 'MathInduction',
-          // includepodid: 'Result',
+          podtitle 'Results',
+          includepodid: 'Result',
           podstate: 'Step-by-step%20solution',
           //assumption: 'MutliClash', 
           //appid: waApi,
