@@ -44,21 +44,14 @@ function API(){
       else{
         waApi.getFull({
           input: userInput,
-          includepodid: 'Values',
-          podstate: 'More',
+          includepodid: 'Result',
+          podstate: 'Step-by-step',
           //appid: waApi,
           format: 'image',  // change back to image
-          //output: 'json',
+          output: 'json',
         }).then((queryresult) => {
-          const pods = queryresult.pods;
-          const output = pods.map((pod) => {
-          const subpodContent = pod.subpods.map(subpod =>
-          `  <img src="${subpod.img.src}" alt="${subpod.img.alt}">`
-        ).join('\n');
-          return `<h2>${pod.title}</h2>\n${subpodContent}`;
-        }).join('\n');
-          res.end(output);
-        }).catch(console.error);
+           res.end(queryresult)
+        }).catch(console.error)
     }
   }
 }).listen(process.env.PORT || 5000);
