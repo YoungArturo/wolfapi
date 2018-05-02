@@ -39,7 +39,7 @@ mjAPI.config({
 //Define API
 function API(){
       if(userInput ==""){
-        res.end('<html><body><h1>There was an error please refresh.</h1></body></html>');
+        res.write('<html><body><h1>There was an error please refresh.</h1></body></html>');
       }
       else{
         waApi.getFull({
@@ -53,10 +53,11 @@ function API(){
            res.write(queryresult.pods[0].subpods[0].plaintext)
         }).catch(console.error)
       }
+      res.end();
   }
 }).listen(process.env.PORT || 5000); 
 
-  res.end();
+
 
 
 
