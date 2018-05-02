@@ -3,7 +3,7 @@ const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 const CONCURRENCY = process.env.WEB_CONCURRENCY || 1;
 
-
+var urlencode = require('urlencode');
 //http server 
 //var http = require('http'); 
 //var url = require('url');
@@ -12,7 +12,7 @@ var express=require('express');
 var app=express();
 
 var server=app.listen(3000,function() {});
-
+var query = urlencode(userInput);
 
 //Classes to import for wolfapi
 const WolframAlphaAPI = require('wolfram-alpha-api');
@@ -50,7 +50,7 @@ app.get('/',function(req,res)
       }
       else{
         waApi.getFull({
-          input: userInput,
+          input: query,
           podindex: '2',
           includepodid: 'Result',
           podstate: 'Step-by-step%20solution',
