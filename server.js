@@ -60,7 +60,7 @@ app.get('/',function(req,res)
           assumption: '*C.is+divisible+by-_*ProveWord-', 
           //appid: waApi,
           format: 'plaintext',  // change back to image
-          output: 'xml',
+          output: 'json',
           scanner: 'Simplification',
           primary: 'true',
           
