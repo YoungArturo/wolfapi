@@ -51,12 +51,15 @@ app.get('/',function(req,res)
       else{
         waApi.getFull({
           input: userInput,
-         // includepodid: 'Result',
+          podtitle 'MathInduction',
+          // includepodid: 'Result',
           podstate: 'Step-by-step%20solution',
-          assumption: 'MutliClash', 
+          //assumption: 'MutliClash', 
           //appid: waApi,
           format: 'plaintext',  // change back to image
           output: 'xml',
+          scanner: 'solve',
+          primary: 'true',
         }).then((queryresult) => {
            res.send(queryresult) //console.log(queryresult.pods[0].subpods[0].plaintext), 
         }).catch(console.error)
