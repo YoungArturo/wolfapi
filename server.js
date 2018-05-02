@@ -55,7 +55,7 @@ app.get('/',function(req,res)
           podstate: 'Step-by-step%20solution',
           assumption: 'MutliClash', 
           //appid: waApi,
-          format: 'plaintext',  // change back to image
+          format: 'image',  // change back to image
           output: 'xml',
         }).then((queryresult) => {
            res.send(queryresult) //console.log(queryresult.pods[0].subpods[0].plaintext), 
