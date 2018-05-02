@@ -51,7 +51,7 @@ app.get('/',function(req,res)
       else{
         waApi.getFull({
           input: userInput,
-          includepodid: 'Result',
+         // includepodid: 'Result',
           podstate: 'Step-by-step',
           //appid: waApi,
           format: 'plaintext',  // change back to image
