@@ -51,22 +51,15 @@ app.get('/',function(req,res)
       else{
         waApi.getFull({
           input: userInput,
-          includepodid: 'Result',
+         // includepodid: 'Result',
           podstate: 'Step-by-step%20solution',
-          //assumption: 'MutliClash', 
+          assumption: 'MutliClash', 
           //appid: waApi,
-          format: 'image',  // change back to image
-          //output: 'xml',
+          format: 'plaintext',  // change back to image
+          output: 'xml',
         }).then((queryresult) => {
-          const pods = queryresult.pods;
-          const output = pods.map((pod) => {
-          const subpodContent = pod.subpods.map(subpod =>
-          `  <img src="${subpod.img.src}" alt="${subpod.img.alt}">`
-        ).join('\n');
-          return `<h2>${pod.title}</h2>\n${subpodContent}`;
-        }).join('\n');
-          res.send(output);
-        }).catch(console.error);
+           res.send(queryresult) //console.log(queryresult.pods[0].subpods[0].plaintext), 
+        }).catch(console.error)
          
       }
   }
