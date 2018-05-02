@@ -22,8 +22,8 @@ const waApi = WolframAlphaAPI('U72E65-ARQERXR86Y');
     //encode then decode
 //Sample problem
 //Possibly remove whitespaces
-var userInput = "prove%20by%20induction%20sum%20of%20j%20from%201%20to%20n%20=%20n(n+1)/2%20for%20n>0";
-var query = escape(userInput);  
+var userInput = "prove by induction sum of j from 1 to n = n(n+1)/2 for n>0";
+var query = userInput.replace(/\s/g, "X");  
     
 //mathjax-node library
 /*var mjAPI = require("mathjax-node");
@@ -53,7 +53,7 @@ app.get('/',function(req,res)
       }
       else{
         waApi.getFull({
-          input: userInput,
+          input: query,
           //numpods: '2',
           //includepodid: 'Input',
           podstate: 'Step-by-step',
