@@ -53,7 +53,7 @@ app.get('/',function(req,res)
           input: userInput,
           //numpods: '2',
           //includepodid: 'Input',
-          podstate: 'Step-by-step%20solution',
+          podstate: 'Step-by-step',
           assumption: '*C.is+divisible+by-_*ProveWord-', 
           //appid: waApi,
           format: 'plaintext',  // change back to image
