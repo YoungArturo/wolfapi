@@ -53,7 +53,7 @@ app.get('/',function(req,res)
           input: userInput,
          // includepodid: 'Result',
           podstate: 'Step-by-step%20solution',
-          assumption: 'MutliClash', 
+          //assumption: 'MutliClash', 
           //appid: waApi,
           format: 'image',  // change back to image
           output: 'xml',
