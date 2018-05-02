@@ -50,9 +50,10 @@ function API(){
           format: 'plaintext',  // change back to image
           output: 'json',
         }).then((queryresult) => {
-           res.write(queryresult.pods[0].subpods[0].plaintext)
+           console.log(queryresult.pods[0].subpods[0].plaintext)
         }).catch(console.error)
       }
+      res.write(queryresult.pods[0].subpods[0].plaintext);
       res.end();
   }
 }).listen(process.env.PORT || 5000); 
