@@ -50,15 +50,8 @@ function API(){
           format: 'plaintext',  // change back to image
           output: 'json',
         }).then((queryresult) => {
-          const pods = queryresult.pods;
-          const output = pods.map((pod) => {
-          const subpodContent = pod.subpods.map(subpod =>
-          `  <img src="${subpod.img.src}" alt="${subpod.img.alt}">`
-        ).join('\n');
-          return `<h2>${pod.title}</h2>\n${subpodContent}`;
-        }).join('\n');
-          res.end(output);
-        }).catch(console.error);
+          res.send(queryresult)
+        }).catch(console.error)
     }
   }
 }).listen(process.env.PORT || 5000);
