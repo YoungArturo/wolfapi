@@ -52,10 +52,10 @@ app.get('/',function(req,res)
         waApi.getFull({
           input: userInput,
          // includepodid: 'Result',
-          podstate: 'Result__Step-by-step',
+          podstate: 'Step-by-step%20solution',
           //appid: waApi,
           format: 'plaintext',  // change back to image
-          output: 'json',
+          output: 'xml',
         }).then((queryresult) => {
            console.log(queryresult.pods[0].subpods[0].plaintext), res.send(queryresult)
         }).catch(console.error)
