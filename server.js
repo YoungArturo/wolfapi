@@ -22,7 +22,7 @@ const waApi = WolframAlphaAPI('U72E65-ARQERXR86Y');
     //encode then decode
 //Sample problem
 //Possibly remove whitespaces
-var userInput = "prove+by+induction+1+3+5+...+(2n-1)=n*n";
+var userInput = "prove by induction sum of j from 1 to n = n(n+1)/2 for n>0";
 var query = urlencode(userInput);  
     
 //mathjax-node library
